@@ -8,8 +8,12 @@ function Form(props) {
   }
   function handleSubmit(event) {
     event.preventDefault();
-    props.addTask(name);
-    setName(""); // Clear the input field after submission
+    if(name===""){
+      alert("不可以输入为空");
+    }else{
+      props.addTask(name);
+      setName(""); // Clear the input field after submission
+    }
   }
 
   return(
